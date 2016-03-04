@@ -201,6 +201,8 @@
 		12F88AE919DDA1D20001531E /* CCEffectSaturation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F88AD719DDA1D20001531E /* CCEffectSaturation.m */; };
 		12F88AEA19DDA1D20001531E /* CCEffectStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F88ADA19DDA1D20001531E /* CCEffectStack.m */; };
 		12F88AEB19DDA1D20001531E /* CCEffectUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F88ADD19DDA1D20001531E /* CCEffectUtils.m */; };
+		A4F54AC51C89288D004146E7 /* Plataforma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F54AC41C89288D004146E7 /* Plataforma.swift */; };
+		A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -605,6 +607,8 @@
 		12F88ADB19DDA1D20001531E /* CCEffectStackProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEffectStackProtocol.h; path = Libraries/cocos2d/CCEffectStackProtocol.h; sourceTree = "<group>"; };
 		12F88ADC19DDA1D20001531E /* CCEffectUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEffectUtils.h; path = Libraries/cocos2d/CCEffectUtils.h; sourceTree = "<group>"; };
 		12F88ADD19DDA1D20001531E /* CCEffectUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCEffectUtils.m; path = Libraries/cocos2d/CCEffectUtils.m; sourceTree = "<group>"; };
+		A4F54AC41C89288D004146E7 /* Plataforma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plataforma.swift; sourceTree = "<group>"; };
+		A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cenarioTemp-ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -718,6 +722,7 @@
 		1293CCB219C08A25006A0E25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */,
 				1255544819C0D85B00EC663C /* Images.xcassets */,
 				1226620E19F00CD6001FE3B9 /* DefaultParticleFire */,
 				1255544A19C0D90600EC663C /* Splash */,
@@ -1442,6 +1447,7 @@
 		1293CF1019C08A27006A0E25 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A4F54AC31C892879004146E7 /* Characters */,
 				1255542E19C09C9E00EC663C /* TSTUtils */,
 				1255543119C09CD200EC663C /* Scenes */,
 			);
@@ -1466,6 +1472,14 @@
 				1293CF2419C08A66006A0E25 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4F54AC31C892879004146E7 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				A4F54AC41C89288D004146E7 /* Plataforma.swift */,
+			);
+			name = Characters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1553,6 +1567,7 @@
 				1255544919C0D85B00EC663C /* Images.xcassets in Resources */,
 				1255544F19C0D90600EC663C /* Default-568h@2x.png in Resources */,
 				1255545019C0D90600EC663C /* Default-Landscape~ipad.png in Resources */,
+				A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */,
 				1255544419C0D72000EC663C /* MusicInGame.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1574,6 +1589,7 @@
 				1293CE5819C08A26006A0E25 /* IOSVersion.m in Sources */,
 				1293CE3E19C08A26006A0E25 /* ALListener.m in Sources */,
 				1293CDDE19C08A26006A0E25 /* CCGLView.m in Sources */,
+				A4F54AC51C89288D004146E7 /* Plataforma.swift in Sources */,
 				1293CDD119C08A26006A0E25 /* CCGLView.m in Sources */,
 				1293CE2919C08A26006A0E25 /* OALSimpleAudio.m in Sources */,
 				1255543B19C0C3B100EC663C /* DelayHelper.swift in Sources */,

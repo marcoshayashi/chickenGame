@@ -17,44 +17,45 @@ class HomeScene : CCScene {
 	// MARK: - Life Cycle
 	override init() {
 		super.init()
-
-		// Create a colored background (Dark Grey)
-		let background:CCNodeColor = CCNodeColor(color: CCColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0))
-		self.addChild(background)
-
-		// Hello world
-		let label:CCLabelTTF = CCLabelTTF(string: "Hello World", fontName: "Chalkduster", fontSize: 36.0)
-		label.color = CCColor.redColor()
-		label.position = CGPointMake(self.screenSize.width/2, self.screenSize.height/2 + 40)
-		label.anchorPoint = CGPointMake(0.5, 0.5)
-		self.addChild(label)
+        
+		let background:CCSprite = CCSprite(imageNamed: "cenarioTemp.png")
+        background.anchorPoint = CGPointMake(0.5, 0.5)
+        background.position = CGPointMake(screenSize.width / 2, screenSize.height / 2)
+        self.addChild(background)
+        
+        let label:CCLabelTTF = CCLabelTTF(string: "Breakfast", fontName: "Chalkduster", fontSize: 60)
+        label.color = CCColor.redColor()
+        label.position = CGPointMake(self.screenSize.width/2, self.screenSize.height/2)
+        label.anchorPoint = CGPointMake(0.5, 0.5)
+        self.addChild(label)
 
 		// ToGame Button
-		let toGameButton:CCButton = CCButton(title: "[ Start ]", fontName: "Verdana-Bold", fontSize: 38.0)
-		toGameButton.position = CGPointMake(self.screenSize.width/2.0, self.screenSize.height/2.0)
+		let toGameButton:CCButton = CCButton(title: "[ Start ]", fontName: "Verdana-Bold", fontSize: 35)
+		toGameButton.position = CGPointMake(self.screenSize.width/2.0 - 150, self.screenSize.height/2.0 - 200)
 		toGameButton.anchorPoint = CGPointMake(0.5, 0.5)
-//		toGameButton.setTarget(self, selector:"startTap:")
-		toGameButton.block = {_ in StateMachine.sharedInstance.changeScene(StateMachineScenes.GameScene, isFade:true)}
+        toGameButton.color = CCColor.redColor()
+		toGameButton.block = {_ in
+            StateMachine.sharedInstance.changeScene(StateMachineScenes.GameScene, isFade:true)
+        }
 		self.addChild(toGameButton)
+        
+        let toOptionsButton:CCButton = CCButton(title: "[ Options ]", fontName: "Verdana-Bold", fontSize: 35)
+        toOptionsButton.position = CGPointMake(self.screenSize.width/2.0 + 150, self.screenSize.height/2.0 - 200)
+        toOptionsButton.anchorPoint = CGPointMake(0.5, 0.5)
+        toOptionsButton.color = CCColor.redColor()
+        toOptionsButton.block = {_ in
+            StateMachine.sharedInstance.changeScene(StateMachineScenes.GameScene, isFade:true)
+        }
+        self.addChild(toOptionsButton)
 	}
 
 	override func onEnter() {
-		// Chamado apos o init quando entra no director
+
 		super.onEnter()
 	}
 
-	// MARK: - Private Methods
-//	func startTap(sender:AnyObject) {
-//		StateMachine.sharedInstance.changeScene(StateMachine.StateMachineScenes.GameScene, isFade:true)
-//	}
-
-	// MARK: - Public Methods
-
-	// MARK: - Delegates/Datasources
-
-	// MARK: - Death Cycle
 	override func onExit() {
-		// Chamado quando sai do director
+
 		super.onExit()
 	}
 }
