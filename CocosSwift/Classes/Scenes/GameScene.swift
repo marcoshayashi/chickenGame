@@ -151,7 +151,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
                 CCDirector.sharedDirector().pause()
                 self.musicVol = SoundPlayHelper.sharedInstance.getMusicVolume()
                 self.effectVol = SoundPlayHelper.sharedInstance.getEffectsVolume()
-
+                SoundPlayHelper.sharedInstance.setMusicVolume(0)
                 self.label.visible = true
                 self.pauseButton.title = "[ Resume ]"
                 self.canPause = false
