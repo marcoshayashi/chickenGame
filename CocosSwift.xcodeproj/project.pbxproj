@@ -230,6 +230,8 @@
 		AC6147211C8B09E3001B593B /* Raposa.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147201C8B09E3001B593B /* Raposa.swift */; };
 		AC6147231C8B0E89001B593B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147221C8B0E89001B593B /* Constants.swift */; };
 		AC6147251C8B1CD0001B593B /* caixa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6147241C8B1CD0001B593B /* caixa.png */; };
+		AC89A3551C8B21E500E2FD83 /* Ovo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89A3541C8B21E500E2FD83 /* Ovo.swift */; };
+		AC89A3571C8B220500E2FD83 /* Galinha.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89A3561C8B220500E2FD83 /* Galinha.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -663,6 +665,8 @@
 		AC6147201C8B09E3001B593B /* Raposa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raposa.swift; sourceTree = "<group>"; };
 		AC6147221C8B0E89001B593B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC6147241C8B1CD0001B593B /* caixa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caixa.png; sourceTree = "<group>"; };
+		AC89A3541C8B21E500E2FD83 /* Ovo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ovo.swift; sourceTree = "<group>"; };
+		AC89A3561C8B220500E2FD83 /* Galinha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galinha.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1566,6 +1570,8 @@
 		A4F54AC31C892879004146E7 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				AC89A3561C8B220500E2FD83 /* Galinha.swift */,
+				AC89A3541C8B21E500E2FD83 /* Ovo.swift */,
 				A4F54AC41C89288D004146E7 /* Plataforma.swift */,
 				AC6147201C8B09E3001B593B /* Raposa.swift */,
 			);
@@ -1722,7 +1728,6 @@
 				1293CDD419C08A26006A0E25 /* UITouch+CC.m in Sources */,
 				1293CE6E19C08A26006A0E25 /* CCButton.m in Sources */,
 				1293CD6019C08A25006A0E25 /* CCParallaxNode.m in Sources */,
-				AC89A3511C8B047500E2FD83 /* Galinha.swift in Sources */,
 				1255542319C08DC000EC663C /* Main.swift in Sources */,
 				1293CDF319C08A26006A0E25 /* ccUtils.c in Sources */,
 				1293CD5019C08A25006A0E25 /* CCLayoutBox.m in Sources */,
@@ -1746,10 +1751,12 @@
 				12F88ADF19DDA1D20001531E /* CCEffectBloom.m in Sources */,
 				1293CDEA19C08A26006A0E25 /* CCFileUtils.m in Sources */,
 				1293CD0F19C08A25006A0E25 /* CCAction.m in Sources */,
+				AC89A3551C8B21E500E2FD83 /* Ovo.swift in Sources */,
 				1293CE4919C08A26006A0E25 /* ALWrapper.m in Sources */,
 				1293CE9319C08A26006A0E25 /* CCBsequence.m in Sources */,
 				1293CE7E19C08A26006A0E25 /* CCTableView.m in Sources */,
 				1293CD4D19C08A25006A0E25 /* CCLayout.m in Sources */,
+				AC89A3571C8B220500E2FD83 /* Galinha.swift in Sources */,
 				1293CD7D19C08A25006A0E25 /* CCPhysicsShape.m in Sources */,
 				1293CD0319C08A25006A0E25 /* CCRenderer.m in Sources */,
 				1255543919C0A00E00EC663C /* SoundPlayHelper.swift in Sources */,
@@ -1798,7 +1805,6 @@
 				1293CD6B19C08A25006A0E25 /* CCParticleSystem.m in Sources */,
 				1293CD6719C08A25006A0E25 /* CCParticleExamples.m in Sources */,
 				1293CD3319C08A25006A0E25 /* CCConfiguration.m in Sources */,
-				AC89A3531C8B048C00E2FD83 /* Ovo.swift in Sources */,
 				1293CE3819C08A26006A0E25 /* ALContext.m in Sources */,
 				1293CD1219C08A25006A0E25 /* CCActionCatmullRom.m in Sources */,
 				1293CDA419C08A25006A0E25 /* CCSpriteFrameCache.m in Sources */,
