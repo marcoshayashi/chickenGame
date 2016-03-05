@@ -227,6 +227,8 @@
 		A4B4FA511C8A90770054D709 /* raposa-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */; };
 		A4F54AC51C89288D004146E7 /* Plataforma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F54AC41C89288D004146E7 /* Plataforma.swift */; };
 		A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */; };
+		AC89A3511C8B047500E2FD83 /* Galinha.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89A3501C8B047500E2FD83 /* Galinha.swift */; };
+		AC89A3531C8B048C00E2FD83 /* Ovo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC89A3521C8B048C00E2FD83 /* Ovo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -657,6 +659,8 @@
 		A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raposa-ipad.png"; sourceTree = "<group>"; };
 		A4F54AC41C89288D004146E7 /* Plataforma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plataforma.swift; sourceTree = "<group>"; };
 		A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cenarioTemp-ipad.png"; sourceTree = "<group>"; };
+		AC89A3501C8B047500E2FD83 /* Galinha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galinha.swift; sourceTree = "<group>"; };
+		AC89A3521C8B048C00E2FD83 /* Ovo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ovo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1559,6 +1563,8 @@
 			isa = PBXGroup;
 			children = (
 				A4F54AC41C89288D004146E7 /* Plataforma.swift */,
+				AC89A3501C8B047500E2FD83 /* Galinha.swift */,
+				AC89A3521C8B048C00E2FD83 /* Ovo.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -1712,6 +1718,7 @@
 				1293CDD419C08A26006A0E25 /* UITouch+CC.m in Sources */,
 				1293CE6E19C08A26006A0E25 /* CCButton.m in Sources */,
 				1293CD6019C08A25006A0E25 /* CCParallaxNode.m in Sources */,
+				AC89A3511C8B047500E2FD83 /* Galinha.swift in Sources */,
 				1255542319C08DC000EC663C /* Main.swift in Sources */,
 				1293CDF319C08A26006A0E25 /* ccUtils.c in Sources */,
 				1293CD5019C08A25006A0E25 /* CCLayoutBox.m in Sources */,
@@ -1785,6 +1792,7 @@
 				1293CD6B19C08A25006A0E25 /* CCParticleSystem.m in Sources */,
 				1293CD6719C08A25006A0E25 /* CCParticleExamples.m in Sources */,
 				1293CD3319C08A25006A0E25 /* CCConfiguration.m in Sources */,
+				AC89A3531C8B048C00E2FD83 /* Ovo.swift in Sources */,
 				1293CE3819C08A26006A0E25 /* ALContext.m in Sources */,
 				1293CD1219C08A25006A0E25 /* CCActionCatmullRom.m in Sources */,
 				1293CDA419C08A25006A0E25 /* CCSpriteFrameCache.m in Sources */,
