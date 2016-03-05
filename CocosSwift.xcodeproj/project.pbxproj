@@ -227,6 +227,9 @@
 		A4B4FA511C8A90770054D709 /* raposa-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */; };
 		A4F54AC51C89288D004146E7 /* Plataforma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F54AC41C89288D004146E7 /* Plataforma.swift */; };
 		A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */; };
+		AC6147211C8B09E3001B593B /* Raposa.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147201C8B09E3001B593B /* Raposa.swift */; };
+		AC6147231C8B0E89001B593B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147221C8B0E89001B593B /* Constants.swift */; };
+		AC6147251C8B1CD0001B593B /* caixa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6147241C8B1CD0001B593B /* caixa.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -657,6 +660,9 @@
 		A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raposa-ipad.png"; sourceTree = "<group>"; };
 		A4F54AC41C89288D004146E7 /* Plataforma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plataforma.swift; sourceTree = "<group>"; };
 		A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cenarioTemp-ipad.png"; sourceTree = "<group>"; };
+		AC6147201C8B09E3001B593B /* Raposa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raposa.swift; sourceTree = "<group>"; };
+		AC6147221C8B0E89001B593B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC6147241C8B1CD0001B593B /* caixa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caixa.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -700,6 +706,7 @@
 				1255543819C0A00E00EC663C /* SoundPlayHelper.swift */,
 				1255543A19C0C3B100EC663C /* DelayHelper.swift */,
 				1255542F19C09C9E00EC663C /* StateMachine.swift */,
+				AC6147221C8B0E89001B593B /* Constants.swift */,
 			);
 			name = TSTUtils;
 			path = Classes/TSTUtils;
@@ -777,6 +784,7 @@
 				A4B4FA4A1C8A90770054D709 /* grenade-ipad.png */,
 				A4B4FA4B1C8A90770054D709 /* ovo-ipad.png */,
 				A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */,
+				AC6147241C8B1CD0001B593B /* caixa.png */,
 				A4B4FA2B1C8A8CF00054D709 /* optionsBackTemp-ipad.png */,
 				A4B4FA251C8A77A80054D709 /* mute-ipad.png */,
 				A4B4FA261C8A77A80054D709 /* speaker-ipad.png */,
@@ -1559,6 +1567,7 @@
 			isa = PBXGroup;
 			children = (
 				A4F54AC41C89288D004146E7 /* Plataforma.swift */,
+				AC6147201C8B09E3001B593B /* Raposa.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -1643,6 +1652,7 @@
 			files = (
 				A4B4FA2C1C8A8CF00054D709 /* optionsBackTemp-ipad.png in Resources */,
 				1255544519C0D72000EC663C /* SoundFXButtonTap.mp3 in Resources */,
+				AC6147251C8B1CD0001B593B /* caixa.png in Resources */,
 				A4B4FA241C8A74BA0054D709 /* sliderNodeNormal-ipad.png in Resources */,
 				1226621019F00CD6001FE3B9 /* fire.png in Resources */,
 				A4B4FA3C1C8A8FEE0054D709 /* Arcade Action 04.mp3 in Resources */,
@@ -1753,6 +1763,7 @@
 				12F88AE819DDA1D20001531E /* CCEffectRenderer.m in Sources */,
 				12F88AEA19DDA1D20001531E /* CCEffectStack.m in Sources */,
 				1293CD8D19C08A25006A0E25 /* CCResponderManager.m in Sources */,
+				AC6147231C8B0E89001B593B /* Constants.swift in Sources */,
 				1293CDBF19C08A26006A0E25 /* CCTransition.m in Sources */,
 				12F88AE319DDA1D20001531E /* CCEffectGlass.m in Sources */,
 				1293CE1619C08A26006A0E25 /* OALActionManager.m in Sources */,
@@ -1766,6 +1777,7 @@
 				1293CDBC19C08A26006A0E25 /* CCTMXXMLParser.m in Sources */,
 				1293CDF119C08A26006A0E25 /* CCProfiling.m in Sources */,
 				1293CE5319C08A26006A0E25 /* OALSuspendHandler.m in Sources */,
+				AC6147211C8B09E3001B593B /* Raposa.swift in Sources */,
 				1293CE8119C08A26006A0E25 /* CCTextField.m in Sources */,
 				1293CD5919C08A25006A0E25 /* CCNode.m in Sources */,
 				1293CE9919C08A26006A0E25 /* CCBLocalizationManager.m in Sources */,
