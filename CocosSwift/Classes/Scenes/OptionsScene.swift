@@ -93,6 +93,7 @@ class OptionsScene : CCScene {
         homeButton.anchorPoint = CGPointMake(0.5, 0.5)
         homeButton.color = CCColor.redColor()
         homeButton.block = {_ in
+            SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.SoundFXButtonTap)
             SoundPlayHelper.sharedInstance.stopAllSounds()
             StateMachine.sharedInstance.changeScene(StateMachineScenes.HomeScene, isFade:true)
         }
@@ -103,6 +104,7 @@ class OptionsScene : CCScene {
         aboutButton.anchorPoint = CGPointMake(0.5, 0.5)
         aboutButton.color = CCColor.redColor()
         aboutButton.block = {_ in
+            SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.SoundFXButtonTap)
             SoundPlayHelper.sharedInstance.stopAllSounds()
             StateMachine.sharedInstance.changeScene(StateMachineScenes.AboutScene, isFade:true)
         }

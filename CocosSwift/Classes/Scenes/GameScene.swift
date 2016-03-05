@@ -19,12 +19,16 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
     var canPlay:Bool = true
     var isTouching:Bool = false
     
+    var musicVol: Float = 0
+    var effectVol: Float = 0
+    
     private var pontos : Int = 0
-    private var canPause : Bool = false
+    private var canPause : Bool = true
     
     let label:CCLabelTTF = CCLabelTTF(string: "Paused", fontName: "Verdana-Bold", fontSize: 42.0)
     let labelScore:CCLabelTTF = CCLabelTTF(string: "0", fontName: "Verdana-Bold", fontSize: 42.0)
     let pauseButton:CCButton = CCButton(title: "[ Pause ]", fontName: "Verdana-Bold", fontSize: 42.0)
+    let backButton:CCButton = CCButton(title: "[ Back ]", fontName: "Verdana-Bold", fontSize: 42.0)
     
     var arrOvos : [Ovo] = []
     
@@ -78,9 +82,9 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         //self.timeToEndLabel.shadowOffset = CGPointMake(-2.0, -2.0)
         
-        self.timeToEndLabel.position = CGPointMake(100, self.screenSize.height-50)
+        self.timeToEndLabel.position = CGPointMake(20, self.screenSize.height-50)
         
-        self.timeToEndLabel.anchorPoint = CGPointMake(0.5, 0.5)
+        self.timeToEndLabel.anchorPoint = CGPointMake(0, 0.5)
         
         self.addChild(self.timeToEndLabel, z:3)
         
@@ -120,10 +124,12 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.physicsWorld.gravity = CGPointMake(0, -980.665)
         self.addChild(self.physicsWorld, z:ObjectsLayers.Background.rawValue)
         
+        //SoundPlayHelper.sharedInstance.playMusicWithControl(GameMusicAndSoundFx.MusicInGame, withLoop: true)
+        
         // Life do player
      
         // Plataforma
-        let plataforma:Plataforma = Plataforma(imageNamed: "caixa.png", tipoPlataforma: TipoPlataforma.Madeira, posicaoInicial: CGPointMake(0 + self.boundingBox().width, 150), posicaoFinal: CGPointMake(screenSize.width-self.boundingBox().width, 150), velocidade: 150)
+        let plataforma:Plataforma = Plataforma(imageNamed: "caixa.png", tipoPlataforma: TipoPlataforma.Madeira, posicaoInicial: CGPointMake(0 + self.boundingBox().width, 200), posicaoFinal: CGPointMake(screenSize.width-self.boundingBox().width, 200), velocidade: 150)
         plataforma.scale = 0.2
         self.physicsWorld.addChild(plataforma, z:ObjectsLayers.Foes.rawValue)
         
@@ -133,21 +139,33 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.physicsWorld.addChild(plataforma2, z:ObjectsLayers.Foes.rawValue)
         
         // Pause button
-        pauseButton.position = CGPointMake(screenSize.width-100, self.screenSize.height-90)
-        pauseButton.anchorPoint = CGPointMake(0.5, 0.5)
+        pauseButton.position = CGPointMake(screenSize.width - 300, self.screenSize.height - 100)
+        pauseButton.anchorPoint = CGPointMake(0, 0.5)
         pauseButton.block = {(sender:AnyObject!) -> Void
             in
+            SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.SoundFXButtonTap)
+
+
             
             if(self.canPause){
                 CCDirector.sharedDirector().pause()
+                self.musicVol = SoundPlayHelper.sharedInstance.getMusicVolume()
+                self.effectVol = SoundPlayHelper.sharedInstance.getEffectsVolume()
+
                 self.label.visible = true
                 self.pauseButton.title = "[ Resume ]"
                 self.canPause = false
+                self.backButton.visible = false
+                
+                
             }else{
+                SoundPlayHelper.sharedInstance.setMusicVolume(self.musicVol)
+                SoundPlayHelper.sharedInstance.setEffectsVolume(self.effectVol)
                 CCDirector.sharedDirector().resume()
                 self.label.visible = false
                 self.pauseButton.title = "[ Pause ]"
                 self.canPause = true
+                self.backButton.visible = true
             }
         }
         
@@ -155,8 +173,8 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         // Pontos
         //labelScore.color = CCColor.redColor()
-        labelScore.position = CGPointMake(100, self.screenSize.height-100)
-        labelScore.anchorPoint = CGPointMake(0.5, 0.5)
+        labelScore.position = CGPointMake(20, self.screenSize.height-100)
+        labelScore.anchorPoint = CGPointMake(0, 0.5)
         self.addChild(labelScore, z:ObjectsLayers.HUD.rawValue)
         
         // Label
@@ -167,11 +185,15 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.addChild(label, z:ObjectsLayers.HUD.rawValue)
         
         // Back button
-        let backButton:CCButton = CCButton(title: "[ Back ]", fontName: "Verdana-Bold", fontSize: 42.0)
-        backButton.position = CGPointMake(screenSize.width, screenSize.height)
-        backButton.anchorPoint = CGPointMake(1.0, 1.0)
-        backButton.zoomWhenHighlighted = false
-        backButton.block = {_ in
+        self.backButton.position = CGPointMake(screenSize.width - 300, screenSize.height)
+        self.backButton.anchorPoint = CGPointMake(0, 1.0)
+        self.backButton.zoomWhenHighlighted = false
+        self.backButton.block = {_ in
+            
+            if (CCDirector.sharedDirector().paused){
+                CCDirector.sharedDirector().resume()
+            }
+            SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.SoundFXButtonTap)
             StateMachine.sharedInstance.changeScene(StateMachineScenes.HomeScene, isFade:true)
         }
         self.addChild(backButton, z:ObjectsLayers.HUD.rawValue)
@@ -182,7 +204,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.physicsWorld.addChild(self.raposa, z:ObjectsLayers.Player.rawValue)
         
         
-        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height-50), posicaoFinal: CGPointMake(screenSize.width, screenSize.height-200), velocidade: 100.0)
+        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height-200), posicaoFinal: CGPointMake(screenSize.width, screenSize.height-200), velocidade: 100.0)
         galinha.scale = 0.2
         //galinha.texture = CCSprite(imageNamed: "caixa.png").texture
         self.addChild(galinha, z:3)
@@ -198,6 +220,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
             let locationInView:CGPoint = CCDirector.sharedDirector().convertTouchToGL(touch)
             self.raposa.position.x = locationInView.x
         }else{
+            self.pauseButton.visible = true
             CCDirector.sharedDirector().resume()
             StateMachine.sharedInstance.changeScene(StateMachineScenes.GameScene, isFade:true)
         }
@@ -262,7 +285,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         self.timeToEnd--
         
-        if (self.timeToEnd <= 0) {
+        if (self.timeToEnd < 0) {
             
             self.gameOver()
             
@@ -289,7 +312,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         // Exibe o texto para retry
         
-        let label:CCLabelTTF = CCLabelTTF(string:"Game Over - Tap to back to menu", fontName:"Verdana", fontSize:42.0)
+        let label:CCLabelTTF = CCLabelTTF(string:"Game Over - Tap to restart.", fontName:"Verdana", fontSize:42.0)
         
         label.color = CCColor.redColor()
         
@@ -303,7 +326,11 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         self.addChild(label, z: 4)
         
+        self.pauseButton.visible = false
+        
         CCDirector.sharedDirector().pause()
+        
+        
         
     }
     
@@ -317,16 +344,18 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
                 
                 if(ovo.tipo == .normal){
                     self.pontos++
+                    SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.RaposaSound)
                     self.arrOvos.removeAtIndex(self.arrOvos.indexOf(ovo)!)
 
                 }else{
+                    SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.ExplosionFX)
                     gameOver()
                 }
                 
             }
         }
         
-        self.labelScore.string = "\(self.pontos)"
+        self.labelScore.string = "Score: \(self.pontos)"
     }
     
     deinit{

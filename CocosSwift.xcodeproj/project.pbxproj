@@ -227,6 +227,8 @@
 		A4B4FA511C8A90770054D709 /* raposa-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */; };
 		A4F54AC51C89288D004146E7 /* Plataforma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F54AC41C89288D004146E7 /* Plataforma.swift */; };
 		A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */; };
+		AC2278141C8B60EC0037DA10 /* Explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AC2278131C8B60EC0037DA10 /* Explosion.mp3 */; };
+		AC2278161C8B60FB0037DA10 /* RaposaSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = AC2278151C8B60FB0037DA10 /* RaposaSound.wav */; };
 		AC6147211C8B09E3001B593B /* Raposa.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147201C8B09E3001B593B /* Raposa.swift */; };
 		AC6147231C8B0E89001B593B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6147221C8B0E89001B593B /* Constants.swift */; };
 		AC6147251C8B1CD0001B593B /* caixa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC6147241C8B1CD0001B593B /* caixa.png */; };
@@ -662,6 +664,8 @@
 		A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raposa-ipad.png"; sourceTree = "<group>"; };
 		A4F54AC41C89288D004146E7 /* Plataforma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plataforma.swift; sourceTree = "<group>"; };
 		A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cenarioTemp-ipad.png"; sourceTree = "<group>"; };
+		AC2278131C8B60EC0037DA10 /* Explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Explosion.mp3; sourceTree = "<group>"; };
+		AC2278151C8B60FB0037DA10 /* RaposaSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = RaposaSound.wav; sourceTree = "<group>"; };
 		AC6147201C8B09E3001B593B /* Raposa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Raposa.swift; sourceTree = "<group>"; };
 		AC6147221C8B0E89001B593B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC6147241C8B1CD0001B593B /* caixa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caixa.png; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 		1255544119C0D72000EC663C /* Musics and SoundsFX */ = {
 			isa = PBXGroup;
 			children = (
+				AC2278151C8B60FB0037DA10 /* RaposaSound.wav */,
+				AC2278131C8B60EC0037DA10 /* Explosion.mp3 */,
 				A4B4FA2D1C8A8FA60054D709 /* MusicInGame.mp3 */,
 				1255544319C0D72000EC663C /* SoundFXButtonTap.mp3 */,
 			);
@@ -1658,6 +1664,7 @@
 			files = (
 				A4B4FA2C1C8A8CF00054D709 /* optionsBackTemp-ipad.png in Resources */,
 				1255544519C0D72000EC663C /* SoundFXButtonTap.mp3 in Resources */,
+				AC2278161C8B60FB0037DA10 /* RaposaSound.wav in Resources */,
 				AC6147251C8B1CD0001B593B /* caixa.png in Resources */,
 				A4B4FA241C8A74BA0054D709 /* sliderNodeNormal-ipad.png in Resources */,
 				1226621019F00CD6001FE3B9 /* fire.png in Resources */,
@@ -1688,6 +1695,7 @@
 				A4B4FA471C8A8FEE0054D709 /* wolf.wav in Resources */,
 				A4B4FA401C8A8FEE0054D709 /* CHICKEN1.wav in Resources */,
 				A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */,
+				AC2278141C8B60EC0037DA10 /* Explosion.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

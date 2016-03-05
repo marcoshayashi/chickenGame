@@ -44,6 +44,7 @@ class AboutScene : CCScene {
         optionsButton.anchorPoint = CGPointMake(0.5, 0.5)
         optionsButton.color = CCColor.redColor()
         optionsButton.block = {_ in
+            SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.SoundFXButtonTap)
             StateMachine.sharedInstance.changeScene(StateMachineScenes.OptionsScene, isFade:true)
         }
         self.addChild(optionsButton)

@@ -67,6 +67,9 @@ class StateMachine {
 		if (currentScene.isKindOfClass(HomeScene) && newScene.isKindOfClass(GameScene)) {
 			SoundPlayHelper.sharedInstance.playMusicWithControl(GameMusicAndSoundFx.MusicInGame, withLoop:true)
 		}
+        if (currentScene.isKindOfClass(GameScene) && newScene.isKindOfClass(GameScene)) {
+            SoundPlayHelper.sharedInstance.playMusicWithControl(GameMusicAndSoundFx.MusicInGame, withLoop:true)
+        }
 
 		return newScene
 	}

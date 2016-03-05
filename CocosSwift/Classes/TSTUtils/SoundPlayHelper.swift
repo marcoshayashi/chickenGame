@@ -10,8 +10,11 @@ import Foundation
 enum GameMusicAndSoundFx:String {
 	case MusicInGame = "MusicInGame.mp3"
 	case SoundFXButtonTap = "SoundFXButtonTap.mp3"
+    case ExplosionFX = "Explosion.mp3"
+    case RaposaSound = "RaposaSound.wav"
+    
 	
-	static let allSoundFx = [SoundFXButtonTap]
+	static let allSoundFx = [SoundFXButtonTap, ExplosionFX, RaposaSound]
 }
 
 class SoundPlayHelper {
@@ -90,4 +93,10 @@ class SoundPlayHelper {
 		OALSimpleAudio.sharedInstance().bgVolume = 0.8
 		OALSimpleAudio.sharedInstance().effectsVolume = 1.0
 	}
+    
+    func setPauseVolume(musica: Float, efeito: Float) {
+        
+        OALSimpleAudio.sharedInstance().bgVolume = 0
+        OALSimpleAudio.sharedInstance().effectsVolume = 0
+    }
 }
