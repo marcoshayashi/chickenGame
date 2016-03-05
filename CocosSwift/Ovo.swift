@@ -29,6 +29,8 @@ class Ovo : CCSprite{
         
         self.tipo = tipoOvo
         
+        self.position = posicaoInicial
+        
         self.physicsBody = CCPhysicsBody(rect: CGRectMake(0, 0, self.contentSize.width, self.contentSize.height), cornerRadius: 0.0)
         self.physicsBody.type = CCPhysicsBodyType.Dynamic
         self.physicsBody.friction = 1.0

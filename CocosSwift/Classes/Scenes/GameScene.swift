@@ -55,12 +55,13 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
 	override func onEnter() {
 		// Chamado apos o init quando entra no director
 		super.onEnter()
+       
 	}
 
 	// Tick baseado no FPS
 	override func update(delta: CCTime) {
 		//...\
-        
+         geraOvos()
 	}
 
 	// MARK: - Private Methods
@@ -79,7 +80,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
     func createSceneObjects() {
         // Define o mundo
         self.physicsWorld.collisionDelegate = self
-        self.physicsWorld.gravity = CGPointZero
+        self.physicsWorld.gravity = CGPointMake(0, -980.665)
         self.addChild(self.physicsWorld, z:ObjectsLayers.Background.rawValue)
         
         // Life do player
@@ -105,14 +106,12 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.physicsWorld.addChild(self.raposa, z:ObjectsLayers.Player.rawValue)
         
         
-        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height/2), posicaoFinal: CGPointMake(screenSize.width, screenSize.height/2), velocidade: 100.0)
+        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height-50), posicaoFinal: CGPointMake(screenSize.width, screenSize.height-50), velocidade: 100.0)
         galinha.scale = 0.2
         //galinha.texture = CCSprite(imageNamed: "caixa.png").texture
         self.addChild(galinha, z:3)
         
-        
     }
-    
     
     
     // Controlando o movimento da raposa
@@ -140,7 +139,20 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.isTouching = false
     }
 
-    
+    func geraOvos(){
+        let percentual = CGFloat(arc4random_uniform(100)) + 1
+        if(percentual < 5){
+            
+            let tipoOvo : TipoOvo = TipoOvo(rawValue: Int(CGFloat(arc4random_uniform(3))))!
+            
+            let ovo : Ovo = Ovo(imageNamed : "ovo.png", tipoOvo: tipoOvo, posicaoInicial: galinha.position)
+            ovo.scale = 0.1
+            ovo.anchorPoint = CGPointMake(0.5,0.5)
+            self.physicsWorld.addChild(ovo, z:3)
+        }
+        
+        
+    }
     
     
     
