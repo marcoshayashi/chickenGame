@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum TipoOvo {
-    case normal
-    case bomba
-    case especial
+enum TipoOvo : Int {
+    case normal = 0
+    case bomba = 1
+    case especial = 2
 }
 
 enum TipoSprite : String{
