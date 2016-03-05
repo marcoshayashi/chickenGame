@@ -18,7 +18,7 @@ import Foundation
 
 	// MARK: Override Methods
 	override func startScene() -> (CCScene) {
-		return OptionsScene()
+		return LoadingScene()
 	}
 
 	// MARK: Multi task delegates

@@ -24,10 +24,25 @@ class LoadingScene : CCScene {
 		label.position = CGPointMake(self.screenSize.width/2, self.screenSize.height/2)
 		label.anchorPoint = CGPointMake(0.5, 0.5)
 		self.addChild(label)
+        
+        if(NSUserDefaults.standardUserDefaults().valueForKey("musicVolume") == nil) {
+            NSUserDefaults.standardUserDefaults().setFloat(SoundPlayHelper.sharedInstance.getMusicVolume(), forKey: "musicVolume")
+        } else {
+            SoundPlayHelper.sharedInstance.setMusicVolume(NSUserDefaults.standardUserDefaults().valueForKey("musicVolume") as! Float)
+        }
+        
+        if(NSUserDefaults.standardUserDefaults().valueForKey("effectsVolume") == nil) {
+            NSUserDefaults.standardUserDefaults().setFloat(SoundPlayHelper.sharedInstance.getEffectsVolume(), forKey: "effectsVolume")
+        } else {
+            SoundPlayHelper.sharedInstance.setEffectsVolume(NSUserDefaults.standardUserDefaults().valueForKey("effectsVolume") as! Float)
+        }
+        
+        
 
 		DelayHelper.sharedInstance.callBlock({ _ in
 			StateMachine.sharedInstance.changeScene(StateMachineScenes.HomeScene, isFade:true)
 		}, withDelay: 1.0)
+        
 	}
 
 	override func onEnter() {

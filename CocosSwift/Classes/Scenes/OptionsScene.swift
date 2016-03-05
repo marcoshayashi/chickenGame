@@ -24,8 +24,8 @@ class OptionsScene : CCScene {
         self.addChild(background)
 
         
-        let musicVolume = SoundPlayHelper.sharedInstance.getEffectsVolume()
-        let effectsVolume = SoundPlayHelper.sharedInstance.getMusicVolume()
+        let musicVolume = SoundPlayHelper.sharedInstance.getMusicVolume()
+        let effectsVolume = SoundPlayHelper.sharedInstance.getEffectsVolume()
         
         let labelTitle:CCLabelTTF = CCLabelTTF(string: "Options", fontName: "Chalkduster", fontSize: 60)
         labelTitle.color = CCColor.redColor()
@@ -116,6 +116,7 @@ class OptionsScene : CCScene {
         
         if(sender.name == "music") {
             SoundPlayHelper.sharedInstance.setMusicVolume(sender.sliderValue)
+            NSUserDefaults.standardUserDefaults().setFloat(sender.sliderValue, forKey: "musicVolume")
             if(!musicPlaying) {
                 SoundPlayHelper.sharedInstance.playMusicWithControl(GameMusicAndSoundFx.MusicInGame, withLoop: false)
                 DelayHelper.sharedInstance.callBlock({ () -> Void in
@@ -131,6 +132,7 @@ class OptionsScene : CCScene {
                 musicPlaying = false
             }
             SoundPlayHelper.sharedInstance.setEffectsVolume(sender.sliderValue)
+                        NSUserDefaults.standardUserDefaults().setFloat(sender.sliderValue, forKey: "effectsVolume")
             SoundPlayHelper.sharedInstance.playSoundWithControl(GameMusicAndSoundFx.SoundFXButtonTap)
         }
         
