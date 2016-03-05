@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - Class Definition
 class GameScene: CCScene, CCPhysicsCollisionDelegate {
-	// MARK: - Public Objects
-	
-	// MARK: - Private Objects
+
 	private let screenSize:CGSize = CCDirector.sharedDirector().viewSize()
     
     var physicsWorld:CCPhysicsNode = CCPhysicsNode()
     var raposa:Raposa = Raposa(imageNamed:"raposa-ipad.png")
+    var galinha : Galinha = Galinha()
+    
     var canPlay:Bool = true
     var isTouching:Bool = false
     
@@ -59,7 +59,8 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
 
 	// Tick baseado no FPS
 	override func update(delta: CCTime) {
-		//...
+		//...\
+        
 	}
 
 	// MARK: - Private Methods
@@ -83,6 +84,10 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         // Life do player
      
+        let plataforma:Plataforma = Plataforma(imageNamed: "caixa.png", tipoPlataforma: TipoPlataforma.Madeira, posicaoInicial: CGPointMake(0 + self.boundingBox().width, 150), posicaoFinal: CGPointMake(screenSize.width-self.boundingBox().width, 150), velocidade: 150)
+        plataforma.scale = 0.2
+        
+        self.physicsWorld.addChild(plataforma, z:ObjectsLayers.Foes.rawValue)
         
         // Back button
         let backButton:CCButton = CCButton(title: "[ Back ]", fontName: "Verdana-Bold", fontSize: 42.0)
@@ -98,9 +103,15 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.raposa.position = CGPointMake(screenSize.width/2.0, 80)
         self.raposa.scale = 0.2
         self.physicsWorld.addChild(self.raposa, z:ObjectsLayers.Player.rawValue)
+        
+        
+        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height/2), posicaoFinal: CGPointMake(screenSize.width, screenSize.height/2), velocidade: 100.0)
+        galinha.scale = 0.2
+        //galinha.texture = CCSprite(imageNamed: "caixa.png").texture
+        self.addChild(galinha, z:3)
+        
+        
     }
-
-    
     
     
     

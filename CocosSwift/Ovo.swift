@@ -23,9 +23,11 @@ class Ovo : CCSprite{
     var pontos : Int = 0
     var tipo : TipoOvo = TipoOvo.normal
     
-    convenience init(tipoOvo:TipoOvo, posicaoInicial:CGPoint) {
+    convenience init(imageNamed : String, tipoOvo:TipoOvo, posicaoInicial:CGPoint) {
         
-        self.init()
+        self.init(imageNamed : imageNamed)
+        
+        self.tipo = tipoOvo
         
         self.physicsBody = CCPhysicsBody(rect: CGRectMake(0, 0, self.contentSize.width, self.contentSize.height), cornerRadius: 0.0)
         self.physicsBody.type = CCPhysicsBodyType.Dynamic
@@ -34,9 +36,7 @@ class Ovo : CCSprite{
         self.physicsBody.collisionCategories = ["ovo"]
         self.physicsBody.collisionMask = ["plataforma","raposa"]
         self.physicsBody.mass = 100
-        
-        self.texture = CCSprite(imageNamed: self.getSpriteOvo(tipoOvo)).texture
-        
+                
     }
     
     func getSpriteOvo(tipoOvo : TipoOvo) -> String{
@@ -49,6 +49,30 @@ class Ovo : CCSprite{
     
     override init(){
         super.init()
+    }
+    
+    override init(imageNamed imageName: String!) {
+        super.init(imageNamed: imageName)
+    }
+    
+    override init(spriteFrame: CCSpriteFrame!) {
+        super.init(spriteFrame: spriteFrame)
+    }
+    
+    override init(CGImage image: CGImage!, key: String!) {
+        super.init(CGImage: image, key: key)
+    }
+    
+    override init(texture: CCTexture!) {
+        super.init(texture: texture)
+    }
+    
+    override init(texture: CCTexture!, rect: CGRect) {
+        super.init(texture: texture, rect: rect)
+    }
+    
+    override init(texture: CCTexture!, rect: CGRect, rotated: Bool) {
+        super.init(texture: texture, rect: rect, rotated: rotated)
     }
 
 }
