@@ -35,13 +35,6 @@ class LoadingScene : CCScene {
 		super.onEnter()
 	}
 
-	// MARK: - Private Methods
-
-	// MARK: - Public Methods
-
-	// MARK: - Delegates/Datasources
-
-	// MARK: - Death Cycle
 	override func onExit() {
 		// Chamado quando sai do director
 		super.onExit()

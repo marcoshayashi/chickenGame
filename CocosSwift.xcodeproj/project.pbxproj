@@ -16,7 +16,6 @@
 		1255543719C09CD200EC663C /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255543419C09CD200EC663C /* LoadingScene.swift */; };
 		1255543919C0A00E00EC663C /* SoundPlayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255543819C0A00E00EC663C /* SoundPlayHelper.swift */; };
 		1255543B19C0C3B100EC663C /* DelayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1255543A19C0C3B100EC663C /* DelayHelper.swift */; };
-		1255544419C0D72000EC663C /* MusicInGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1255544219C0D72000EC663C /* MusicInGame.mp3 */; };
 		1255544519C0D72000EC663C /* SoundFXButtonTap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1255544319C0D72000EC663C /* SoundFXButtonTap.mp3 */; };
 		1255544919C0D85B00EC663C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1255544819C0D85B00EC663C /* Images.xcassets */; };
 		1255544F19C0D90600EC663C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1255544B19C0D90600EC663C /* Default-568h@2x.png */; };
@@ -201,6 +200,31 @@
 		12F88AE919DDA1D20001531E /* CCEffectSaturation.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F88AD719DDA1D20001531E /* CCEffectSaturation.m */; };
 		12F88AEA19DDA1D20001531E /* CCEffectStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F88ADA19DDA1D20001531E /* CCEffectStack.m */; };
 		12F88AEB19DDA1D20001531E /* CCEffectUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F88ADD19DDA1D20001531E /* CCEffectUtils.m */; };
+		A4B4F9EA1C8A69BF0054D709 /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4F9E91C8A69BF0054D709 /* OptionsScene.swift */; };
+		A4B4FA221C8A73FA0054D709 /* sliderFull-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA201C8A73FA0054D709 /* sliderFull-ipad.png */; };
+		A4B4FA241C8A74BA0054D709 /* sliderNodeNormal-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA231C8A74BA0054D709 /* sliderNodeNormal-ipad.png */; };
+		A4B4FA271C8A77A80054D709 /* mute-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA251C8A77A80054D709 /* mute-ipad.png */; };
+		A4B4FA281C8A77A80054D709 /* speaker-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA261C8A77A80054D709 /* speaker-ipad.png */; };
+		A4B4FA2A1C8A866C0054D709 /* AboutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B4FA291C8A866C0054D709 /* AboutScene.swift */; };
+		A4B4FA2C1C8A8CF00054D709 /* optionsBackTemp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA2B1C8A8CF00054D709 /* optionsBackTemp-ipad.png */; };
+		A4B4FA2E1C8A8FA60054D709 /* MusicInGame.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA2D1C8A8FA60054D709 /* MusicInGame.mp3 */; };
+		A4B4FA3C1C8A8FEE0054D709 /* Arcade Action 04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA301C8A8FEE0054D709 /* Arcade Action 04.mp3 */; };
+		A4B4FA3D1C8A8FEE0054D709 /* Astyanax-Redwood.mid in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA311C8A8FEE0054D709 /* Astyanax-Redwood.mid */; };
+		A4B4FA3E1C8A8FEE0054D709 /* Athena-Forest.mid in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA321C8A8FEE0054D709 /* Athena-Forest.mid */; };
+		A4B4FA3F1C8A8FEE0054D709 /* Board Room Applause 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA331C8A8FEE0054D709 /* Board Room Applause 01.mp3 */; };
+		A4B4FA401C8A8FEE0054D709 /* CHICKEN1.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA341C8A8FEE0054D709 /* CHICKEN1.wav */; };
+		A4B4FA411C8A8FEE0054D709 /* CHICKEN2.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA351C8A8FEE0054D709 /* CHICKEN2.wav */; };
+		A4B4FA421C8A8FEE0054D709 /* Donkey_Kong.mid in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA361C8A8FEE0054D709 /* Donkey_Kong.mid */; };
+		A4B4FA431C8A8FEE0054D709 /* Explosion 04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA371C8A8FEE0054D709 /* Explosion 04.mp3 */; };
+		A4B4FA441C8A8FEE0054D709 /* Firestrm.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA381C8A8FEE0054D709 /* Firestrm.wav */; };
+		A4B4FA451C8A8FEE0054D709 /* JUNGLE.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA391C8A8FEE0054D709 /* JUNGLE.wav */; };
+		A4B4FA461C8A8FEE0054D709 /* junglebird.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA3A1C8A8FEE0054D709 /* junglebird.wav */; };
+		A4B4FA471C8A8FEE0054D709 /* wolf.wav in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA3B1C8A8FEE0054D709 /* wolf.wav */; };
+		A4B4FA4D1C8A90770054D709 /* bomba-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA481C8A90770054D709 /* bomba-ipad.png */; };
+		A4B4FA4E1C8A90770054D709 /* galinha-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA491C8A90770054D709 /* galinha-ipad.png */; };
+		A4B4FA4F1C8A90770054D709 /* grenade-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA4A1C8A90770054D709 /* grenade-ipad.png */; };
+		A4B4FA501C8A90770054D709 /* ovo-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA4B1C8A90770054D709 /* ovo-ipad.png */; };
+		A4B4FA511C8A90770054D709 /* raposa-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */; };
 		A4F54AC51C89288D004146E7 /* Plataforma.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F54AC41C89288D004146E7 /* Plataforma.swift */; };
 		A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */; };
 /* End PBXBuildFile section */
@@ -215,7 +239,6 @@
 		1255543419C09CD200EC663C /* LoadingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		1255543819C0A00E00EC663C /* SoundPlayHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayHelper.swift; sourceTree = "<group>"; };
 		1255543A19C0C3B100EC663C /* DelayHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelayHelper.swift; sourceTree = "<group>"; };
-		1255544219C0D72000EC663C /* MusicInGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MusicInGame.mp3; sourceTree = "<group>"; };
 		1255544319C0D72000EC663C /* SoundFXButtonTap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SoundFXButtonTap.mp3; sourceTree = "<group>"; };
 		1255544819C0D85B00EC663C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Resources/Images.xcassets; sourceTree = "<group>"; };
 		1255544B19C0D90600EC663C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -607,6 +630,31 @@
 		12F88ADB19DDA1D20001531E /* CCEffectStackProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEffectStackProtocol.h; path = Libraries/cocos2d/CCEffectStackProtocol.h; sourceTree = "<group>"; };
 		12F88ADC19DDA1D20001531E /* CCEffectUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEffectUtils.h; path = Libraries/cocos2d/CCEffectUtils.h; sourceTree = "<group>"; };
 		12F88ADD19DDA1D20001531E /* CCEffectUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCEffectUtils.m; path = Libraries/cocos2d/CCEffectUtils.m; sourceTree = "<group>"; };
+		A4B4F9E91C8A69BF0054D709 /* OptionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
+		A4B4FA201C8A73FA0054D709 /* sliderFull-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderFull-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA231C8A74BA0054D709 /* sliderNodeNormal-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sliderNodeNormal-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA251C8A77A80054D709 /* mute-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mute-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA261C8A77A80054D709 /* speaker-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speaker-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA291C8A866C0054D709 /* AboutScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScene.swift; sourceTree = "<group>"; };
+		A4B4FA2B1C8A8CF00054D709 /* optionsBackTemp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "optionsBackTemp-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA2D1C8A8FA60054D709 /* MusicInGame.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MusicInGame.mp3; sourceTree = "<group>"; };
+		A4B4FA301C8A8FEE0054D709 /* Arcade Action 04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Arcade Action 04.mp3"; sourceTree = "<group>"; };
+		A4B4FA311C8A8FEE0054D709 /* Astyanax-Redwood.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Astyanax-Redwood.mid"; sourceTree = "<group>"; };
+		A4B4FA321C8A8FEE0054D709 /* Athena-Forest.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Athena-Forest.mid"; sourceTree = "<group>"; };
+		A4B4FA331C8A8FEE0054D709 /* Board Room Applause 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Board Room Applause 01.mp3"; sourceTree = "<group>"; };
+		A4B4FA341C8A8FEE0054D709 /* CHICKEN1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CHICKEN1.wav; sourceTree = "<group>"; };
+		A4B4FA351C8A8FEE0054D709 /* CHICKEN2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = CHICKEN2.wav; sourceTree = "<group>"; };
+		A4B4FA361C8A8FEE0054D709 /* Donkey_Kong.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = Donkey_Kong.mid; sourceTree = "<group>"; };
+		A4B4FA371C8A8FEE0054D709 /* Explosion 04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Explosion 04.mp3"; sourceTree = "<group>"; };
+		A4B4FA381C8A8FEE0054D709 /* Firestrm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Firestrm.wav; sourceTree = "<group>"; };
+		A4B4FA391C8A8FEE0054D709 /* JUNGLE.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = JUNGLE.wav; sourceTree = "<group>"; };
+		A4B4FA3A1C8A8FEE0054D709 /* junglebird.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = junglebird.wav; sourceTree = "<group>"; };
+		A4B4FA3B1C8A8FEE0054D709 /* wolf.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wolf.wav; sourceTree = "<group>"; };
+		A4B4FA481C8A90770054D709 /* bomba-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomba-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA491C8A90770054D709 /* galinha-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "galinha-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA4A1C8A90770054D709 /* grenade-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grenade-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA4B1C8A90770054D709 /* ovo-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ovo-ipad.png"; sourceTree = "<group>"; };
+		A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "raposa-ipad.png"; sourceTree = "<group>"; };
 		A4F54AC41C89288D004146E7 /* Plataforma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plataforma.swift; sourceTree = "<group>"; };
 		A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cenarioTemp-ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -663,6 +711,8 @@
 				1255543419C09CD200EC663C /* LoadingScene.swift */,
 				1255543319C09CD200EC663C /* HomeScene.swift */,
 				1255543219C09CD200EC663C /* GameScene.swift */,
+				A4B4F9E91C8A69BF0054D709 /* OptionsScene.swift */,
+				A4B4FA291C8A866C0054D709 /* AboutScene.swift */,
 			);
 			name = Scenes;
 			path = Classes/Scenes;
@@ -671,7 +721,7 @@
 		1255544119C0D72000EC663C /* Musics and SoundsFX */ = {
 			isa = PBXGroup;
 			children = (
-				1255544219C0D72000EC663C /* MusicInGame.mp3 */,
+				A4B4FA2D1C8A8FA60054D709 /* MusicInGame.mp3 */,
 				1255544319C0D72000EC663C /* SoundFXButtonTap.mp3 */,
 			);
 			name = "Musics and SoundsFX";
@@ -722,8 +772,19 @@
 		1293CCB219C08A25006A0E25 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A4B4FA481C8A90770054D709 /* bomba-ipad.png */,
+				A4B4FA491C8A90770054D709 /* galinha-ipad.png */,
+				A4B4FA4A1C8A90770054D709 /* grenade-ipad.png */,
+				A4B4FA4B1C8A90770054D709 /* ovo-ipad.png */,
+				A4B4FA4C1C8A90770054D709 /* raposa-ipad.png */,
+				A4B4FA2B1C8A8CF00054D709 /* optionsBackTemp-ipad.png */,
+				A4B4FA251C8A77A80054D709 /* mute-ipad.png */,
+				A4B4FA261C8A77A80054D709 /* speaker-ipad.png */,
+				A4B4FA231C8A74BA0054D709 /* sliderNodeNormal-ipad.png */,
+				A4B4FA201C8A73FA0054D709 /* sliderFull-ipad.png */,
 				A4F54AC61C892A82004146E7 /* cenarioTemp-ipad.png */,
 				1255544819C0D85B00EC663C /* Images.xcassets */,
+				A4B4FA2F1C8A8FEE0054D709 /* Efeitos sonoros */,
 				1226620E19F00CD6001FE3B9 /* DefaultParticleFire */,
 				1255544A19C0D90600EC663C /* Splash */,
 				1255544119C0D72000EC663C /* Musics and SoundsFX */,
@@ -1474,6 +1535,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A4B4FA2F1C8A8FEE0054D709 /* Efeitos sonoros */ = {
+			isa = PBXGroup;
+			children = (
+				A4B4FA301C8A8FEE0054D709 /* Arcade Action 04.mp3 */,
+				A4B4FA311C8A8FEE0054D709 /* Astyanax-Redwood.mid */,
+				A4B4FA321C8A8FEE0054D709 /* Athena-Forest.mid */,
+				A4B4FA331C8A8FEE0054D709 /* Board Room Applause 01.mp3 */,
+				A4B4FA341C8A8FEE0054D709 /* CHICKEN1.wav */,
+				A4B4FA351C8A8FEE0054D709 /* CHICKEN2.wav */,
+				A4B4FA361C8A8FEE0054D709 /* Donkey_Kong.mid */,
+				A4B4FA371C8A8FEE0054D709 /* Explosion 04.mp3 */,
+				A4B4FA381C8A8FEE0054D709 /* Firestrm.wav */,
+				A4B4FA391C8A8FEE0054D709 /* JUNGLE.wav */,
+				A4B4FA3A1C8A8FEE0054D709 /* junglebird.wav */,
+				A4B4FA3B1C8A8FEE0054D709 /* wolf.wav */,
+			);
+			name = "Efeitos sonoros";
+			path = "Resources/Splash/Efeitos sonoros";
+			sourceTree = "<group>";
+		};
 		A4F54AC31C892879004146E7 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
@@ -1560,15 +1641,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B4FA2C1C8A8CF00054D709 /* optionsBackTemp-ipad.png in Resources */,
 				1255544519C0D72000EC663C /* SoundFXButtonTap.mp3 in Resources */,
+				A4B4FA241C8A74BA0054D709 /* sliderNodeNormal-ipad.png in Resources */,
 				1226621019F00CD6001FE3B9 /* fire.png in Resources */,
+				A4B4FA3C1C8A8FEE0054D709 /* Arcade Action 04.mp3 in Resources */,
+				A4B4FA221C8A73FA0054D709 /* sliderFull-ipad.png in Resources */,
+				A4B4FA2E1C8A8FA60054D709 /* MusicInGame.mp3 in Resources */,
+				A4B4FA411C8A8FEE0054D709 /* CHICKEN2.wav in Resources */,
+				A4B4FA4D1C8A90770054D709 /* bomba-ipad.png in Resources */,
+				A4B4FA431C8A8FEE0054D709 /* Explosion 04.mp3 in Resources */,
 				1255545119C0D90600EC663C /* Default.png in Resources */,
+				A4B4FA4F1C8A90770054D709 /* grenade-ipad.png in Resources */,
 				1255545219C0D90600EC663C /* Default@2x.png in Resources */,
+				A4B4FA441C8A8FEE0054D709 /* Firestrm.wav in Resources */,
+				A4B4FA3F1C8A8FEE0054D709 /* Board Room Applause 01.mp3 in Resources */,
+				A4B4FA461C8A8FEE0054D709 /* junglebird.wav in Resources */,
+				A4B4FA3D1C8A8FEE0054D709 /* Astyanax-Redwood.mid in Resources */,
+				A4B4FA421C8A8FEE0054D709 /* Donkey_Kong.mid in Resources */,
+				A4B4FA511C8A90770054D709 /* raposa-ipad.png in Resources */,
+				A4B4FA281C8A77A80054D709 /* speaker-ipad.png in Resources */,
+				A4B4FA501C8A90770054D709 /* ovo-ipad.png in Resources */,
+				A4B4FA4E1C8A90770054D709 /* galinha-ipad.png in Resources */,
+				A4B4FA3E1C8A8FEE0054D709 /* Athena-Forest.mid in Resources */,
+				A4B4FA271C8A77A80054D709 /* mute-ipad.png in Resources */,
+				A4B4FA451C8A8FEE0054D709 /* JUNGLE.wav in Resources */,
 				1255544919C0D85B00EC663C /* Images.xcassets in Resources */,
 				1255544F19C0D90600EC663C /* Default-568h@2x.png in Resources */,
 				1255545019C0D90600EC663C /* Default-Landscape~ipad.png in Resources */,
+				A4B4FA471C8A8FEE0054D709 /* wolf.wav in Resources */,
+				A4B4FA401C8A8FEE0054D709 /* CHICKEN1.wav in Resources */,
 				A4F54AC71C892A82004146E7 /* cenarioTemp-ipad.png in Resources */,
-				1255544419C0D72000EC663C /* MusicInGame.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1579,6 +1682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B4FA2A1C8A866C0054D709 /* AboutScene.swift in Sources */,
 				1217A88C1C2851DF001FC86B /* KeyChainHelper.swift in Sources */,
 				1293CE7819C08A26006A0E25 /* CCScrollView.m in Sources */,
 				1293CE1319C08A26006A0E25 /* OALAction.m in Sources */,
@@ -1644,6 +1748,7 @@
 				1293CE6119C08A26006A0E25 /* NSMutableDictionary+WeakReferences.m in Sources */,
 				12F88AE919DDA1D20001531E /* CCEffectSaturation.m in Sources */,
 				1293CD1F19C08A25006A0E25 /* CCActionManager.m in Sources */,
+				A4B4F9EA1C8A69BF0054D709 /* OptionsScene.swift in Sources */,
 				1293CD8119C08A25006A0E25 /* CCProgressNode.m in Sources */,
 				12F88AE819DDA1D20001531E /* CCEffectRenderer.m in Sources */,
 				12F88AEA19DDA1D20001531E /* CCEffectStack.m in Sources */,

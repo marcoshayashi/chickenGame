@@ -69,6 +69,18 @@ class SoundPlayHelper {
 	func setMusicVolume(aVolume:Float) {
 		OALSimpleAudio.sharedInstance().bgVolume = aVolume
 	}
+    
+    func getMusicVolume() -> Float {
+        return OALSimpleAudio.sharedInstance().bgVolume
+    }
+    
+    func setEffectsVolume(aVolume:Float) {
+        OALSimpleAudio.sharedInstance().effectsVolume = aVolume
+    }
+    
+    func getEffectsVolume() -> Float {
+        return OALSimpleAudio.sharedInstance().effectsVolume
+    }
 
 	func setMusicPauseVolume() {
 		OALSimpleAudio.sharedInstance().bgVolume = 0.25

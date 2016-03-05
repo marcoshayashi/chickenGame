@@ -31,7 +31,7 @@ class HomeScene : CCScene {
 
 		// ToGame Button
 		let toGameButton:CCButton = CCButton(title: "[ Start ]", fontName: "Verdana-Bold", fontSize: 35)
-		toGameButton.position = CGPointMake(self.screenSize.width/2.0 - 150, self.screenSize.height/2.0 - 200)
+		toGameButton.position = CGPointMake(self.screenSize.width/2.0 - (self.screenSize.width * 0.2), self.screenSize.height - (self.screenSize.height * 0.7))
 		toGameButton.anchorPoint = CGPointMake(0.5, 0.5)
         toGameButton.color = CCColor.redColor()
 		toGameButton.block = {_ in
@@ -40,11 +40,11 @@ class HomeScene : CCScene {
 		self.addChild(toGameButton)
         
         let toOptionsButton:CCButton = CCButton(title: "[ Options ]", fontName: "Verdana-Bold", fontSize: 35)
-        toOptionsButton.position = CGPointMake(self.screenSize.width/2.0 + 150, self.screenSize.height/2.0 - 200)
+        toOptionsButton.position = CGPointMake(self.screenSize.width/2.0 + (self.screenSize.width * 0.2), self.screenSize.height - (self.screenSize.height * 0.7))
         toOptionsButton.anchorPoint = CGPointMake(0.5, 0.5)
         toOptionsButton.color = CCColor.redColor()
         toOptionsButton.block = {_ in
-            StateMachine.sharedInstance.changeScene(StateMachineScenes.GameScene, isFade:true)
+            StateMachine.sharedInstance.changeScene(StateMachineScenes.OptionsScene, isFade:true)
         }
         self.addChild(toOptionsButton)
 	}
