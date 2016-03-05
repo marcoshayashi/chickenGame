@@ -19,9 +19,20 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
     var canPlay:Bool = true
     var isTouching:Bool = false
     
+    private var pontos : Int = 0
+    private var canPause : Bool = false
     
+    let label:CCLabelTTF = CCLabelTTF(string: "Paused", fontName: "Verdana-Bold", fontSize: 42.0)
+    let labelScore:CCLabelTTF = CCLabelTTF(string: "0", fontName: "Verdana-Bold", fontSize: 42.0)
+    let pauseButton:CCButton = CCButton(title: "[ Pause ]", fontName: "Verdana-Bold", fontSize: 42.0)
     
-	// MARK: - Life Cycle
+    var arrOvos : [Ovo] = []
+    
+    private var timeToEndLabel:CCLabelTTF = CCLabelTTF(string:"Time Remaining: 60", fontName:"Verdana-Bold", fontSize:42.0)
+    
+    private var timeToEnd:Int = 60
+    
+    // MARK: - Life Cycle
 	override init() {
 		super.init()
         
@@ -50,18 +61,44 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
 		backButton.block = {_ in StateMachine.sharedInstance.changeScene(StateMachineScenes.HomeScene, isFade:true)}
 		self.addChild(backButton)
 */
+        
+        
+
 	}
 
 	override func onEnter() {
 		// Chamado apos o init quando entra no director
 		super.onEnter()
+        
+        // Configura o timer
+        
+        //self.timeToEndLabel.fontColor = CCColor.whiteColor()
+        
+        //self.timeToEndLabel.shadowColor = CCColor.blackColor()
+        
+        //self.timeToEndLabel.shadowOffset = CGPointMake(-2.0, -2.0)
+        
+        self.timeToEndLabel.position = CGPointMake(100, self.screenSize.height-50)
+        
+        self.timeToEndLabel.anchorPoint = CGPointMake(0.5, 0.5)
+        
+        self.addChild(self.timeToEndLabel, z:3)
+        
+        
+        // Registra o tick para end game
+        
+        DelayHelper.sharedInstance.callFunc("tickToEnd", onTarget: self, withDelay: 1.0)
+        
+        
        
 	}
 
 	// Tick baseado no FPS
 	override func update(delta: CCTime) {
 		//...\
-         geraOvos()
+        geraOvos()
+        contaPontos()
+        
 	}
 
 	// MARK: - Private Methods
@@ -85,10 +122,49 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         
         // Life do player
      
+        // Plataforma
         let plataforma:Plataforma = Plataforma(imageNamed: "caixa.png", tipoPlataforma: TipoPlataforma.Madeira, posicaoInicial: CGPointMake(0 + self.boundingBox().width, 150), posicaoFinal: CGPointMake(screenSize.width-self.boundingBox().width, 150), velocidade: 150)
         plataforma.scale = 0.2
-        
         self.physicsWorld.addChild(plataforma, z:ObjectsLayers.Foes.rawValue)
+        
+        // Plataforma
+        let plataforma2:Plataforma = Plataforma(imageNamed: "caixa.png", tipoPlataforma: TipoPlataforma.Madeira, posicaoInicial: CGPointMake(0 + self.boundingBox().width, 400), posicaoFinal: CGPointMake(screenSize.width-self.boundingBox().width, 400), velocidade: 300)
+        plataforma2.scale = 0.2
+        self.physicsWorld.addChild(plataforma2, z:ObjectsLayers.Foes.rawValue)
+        
+        // Pause button
+        pauseButton.position = CGPointMake(screenSize.width-100, self.screenSize.height-90)
+        pauseButton.anchorPoint = CGPointMake(0.5, 0.5)
+        pauseButton.block = {(sender:AnyObject!) -> Void
+            in
+            
+            if(self.canPause){
+                CCDirector.sharedDirector().pause()
+                self.label.visible = true
+                self.pauseButton.title = "[ Resume ]"
+                self.canPause = false
+            }else{
+                CCDirector.sharedDirector().resume()
+                self.label.visible = false
+                self.pauseButton.title = "[ Pause ]"
+                self.canPause = true
+            }
+        }
+        
+        self.addChild(pauseButton, z:ObjectsLayers.HUD.rawValue)
+        
+        // Pontos
+        //labelScore.color = CCColor.redColor()
+        labelScore.position = CGPointMake(100, self.screenSize.height-100)
+        labelScore.anchorPoint = CGPointMake(0.5, 0.5)
+        self.addChild(labelScore, z:ObjectsLayers.HUD.rawValue)
+        
+        // Label
+        //label.color = CCColor.redColor()
+        label.position = CGPointMake(self.screenSize.width/2, self.screenSize.height/2 + 40)
+        label.anchorPoint = CGPointMake(0.5, 0.5)
+        label.visible = false
+        self.addChild(label, z:ObjectsLayers.HUD.rawValue)
         
         // Back button
         let backButton:CCButton = CCButton(title: "[ Back ]", fontName: "Verdana-Bold", fontSize: 42.0)
@@ -106,7 +182,7 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
         self.physicsWorld.addChild(self.raposa, z:ObjectsLayers.Player.rawValue)
         
         
-        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height-50), posicaoFinal: CGPointMake(screenSize.width, screenSize.height-50), velocidade: 100.0)
+        galinha = Galinha(imageNamed: "galinha.png",posicaoInicial: CGPointMake(0, screenSize.height-50), posicaoFinal: CGPointMake(screenSize.width, screenSize.height-200), velocidade: 100.0)
         galinha.scale = 0.2
         //galinha.texture = CCSprite(imageNamed: "caixa.png").texture
         self.addChild(galinha, z:3)
@@ -121,6 +197,9 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
             self.isTouching = true
             let locationInView:CGPoint = CCDirector.sharedDirector().convertTouchToGL(touch)
             self.raposa.position.x = locationInView.x
+        }else{
+            CCDirector.sharedDirector().resume()
+            StateMachine.sharedInstance.changeScene(StateMachineScenes.GameScene, isFade:true)
         }
     }
     
@@ -140,23 +219,117 @@ class GameScene: CCScene, CCPhysicsCollisionDelegate {
     }
 
     func geraOvos(){
-        let percentual = CGFloat(arc4random_uniform(100)) + 1
-        if(percentual < 5){
-            
-            let tipoOvo : TipoOvo = TipoOvo(rawValue: Int(CGFloat(arc4random_uniform(3))))!
-            
-            let ovo : Ovo = Ovo(imageNamed : "ovo.png", tipoOvo: tipoOvo, posicaoInicial: galinha.position)
-            ovo.scale = 0.1
-            ovo.anchorPoint = CGPointMake(0.5,0.5)
-            self.physicsWorld.addChild(ovo, z:3)
-        }
         
+        let percentual = CGFloat(arc4random_uniform(100)) + 1
+        var tipoOvo : TipoOvo = .normal
+        var ovo : Ovo = Ovo()
+        
+        if(percentual > 3)&&(percentual < 9){
+            
+            
+            
+            //let tipoOvo : TipoOvo = TipoOvo(rawValue: Int(CGFloat(arc4random_uniform(3))))!
+             tipoOvo = TipoOvo.normal
+            
+            ovo = Ovo(imageNamed : "ovo.png", tipoOvo: tipoOvo, posicaoInicial: galinha.position)
+            
+            ovo.scale = 0.1
+            
+            ovo.anchorPoint = CGPointMake(0.5,0.5)
+            
+            self.physicsWorld.addChild(ovo, z:3)
+            
+        }else if(percentual > 0)&&(percentual < 3){
+            
+            //let tipoOvo : TipoOvo = TipoOvo(rawValue: Int(CGFloat(arc4random_uniform(3))))!
+            
+            tipoOvo = TipoOvo.bomba
+            
+            ovo = Ovo(imageNamed : "grenade.png", tipoOvo: tipoOvo, posicaoInicial: galinha.position)
+            
+            ovo.scale = 0.1
+            
+            ovo.anchorPoint = CGPointMake(0.5,0.5)
+            
+            self.physicsWorld.addChild(ovo, z:3)
+            
+        }
+       
+        arrOvos.append(ovo)
+    }
+    
+    func tickToEnd() {
+        
+        self.timeToEnd--
+        
+        if (self.timeToEnd <= 0) {
+            
+            self.gameOver()
+            
+        } else {
+            
+            self.timeToEndLabel.string = "Time Remaining: \(self.timeToEnd)"
+            
+            // Chama de 1 em 1 seg
+            
+            DelayHelper.sharedInstance.callFunc("tickToEnd", onTarget: self, withDelay: 1.0)
+            
+        }
         
     }
     
     
+    func gameOver() {
+        
+        self.canPlay = false
+        
+        // Cancela todas as acoes na cena
+        
+        self.stopAllActions()
+        
+        // Exibe o texto para retry
+        
+        let label:CCLabelTTF = CCLabelTTF(string:"Game Over - Tap to back to menu", fontName:"Verdana", fontSize:42.0)
+        
+        label.color = CCColor.redColor()
+        
+        label.shadowColor = CCColor.blackColor()
+        
+        label.shadowOffset = CGPointMake(2.0, -2.0)
+        
+        label.position = CGPointMake(self.screenSize.width/2, self.screenSize.height/2)
+        
+        label.anchorPoint = CGPointMake(0.5, 0.5)
+        
+        self.addChild(label, z: 4)
+        
+        CCDirector.sharedDirector().pause()
+        
+    }
     
+    func contaPontos(){
+        
+        for ovo : Ovo in self.arrOvos{
+            
+            if(CGRectIntersectsRect(self.raposa.boundingBox(), ovo.boundingBox())){
+                
+                ovo.removeFromParentAndCleanup(true)
+                
+                if(ovo.tipo == .normal){
+                    self.pontos++
+                    self.arrOvos.removeAtIndex(self.arrOvos.indexOf(ovo)!)
+
+                }else{
+                    gameOver()
+                }
+                
+            }
+        }
+        
+        self.labelScore.string = "\(self.pontos)"
+    }
     
-    
-    
+    deinit{
+        CCTextureCache.sharedTextureCache().removeAllTextures()
+    }
 }

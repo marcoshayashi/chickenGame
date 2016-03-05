@@ -27,6 +27,7 @@ class Plataforma : CCSprite {
         
         self.physicsBody = CCPhysicsBody(rect: CGRectMake(0, 0, self.boundingBox().width, self.boundingBox().height), cornerRadius: 0)
         self.physicsBody.type = .Kinematic
+        self.position = posicaoInicial
         
         if(tipoPlataforma == .Elastica) {
             self.physicsBody.friction = 1.2
